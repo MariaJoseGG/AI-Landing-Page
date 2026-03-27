@@ -6,8 +6,14 @@ import Button from "@/components/Button";
 export const Header = () => {
   return (
     <header className="py-4 border-b border-white/15 md:border-none sticky top-0 z-10">
+      {/* Background blur in mobile view */}
+      <div className="absolute inset-0 backdrop-blur -z-10 md:hidden"></div>
+
       <div className="container">
-        <div className="flex justify-between items-center md:border md:border-white/15 md:p-2.5 md:rounded-xl max-w-2xl mx-auto backdrop-blur">
+        <div className="flex justify-between items-center md:border md:border-white/15 md:p-2.5 md:rounded-xl max-w-2xl mx-auto relative">
+          {/* Background blur in tablet and desktop views */}
+          <div className="absolute inset-0 md:backdrop-blur -z-10"></div>
+
           <div>
             <div className="border size-10 rounded-lg inline-flex justify-center items-center border-white/15">
               <LogoIcon className="size-8" />
